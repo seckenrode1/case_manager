@@ -2,6 +2,7 @@ package org.sarahEckenrode.caseManager.controllers;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 
 import org.sarahEckenrode.caseManager.models.Address;
@@ -92,13 +93,18 @@ public class ContactController {
         return "redirect:/contacts";
     }
     
-    //Gets the page that shows contact infomation
+    //Gets the page that shows contact infomation. Catches entityNotFound exception.
 	@GetMapping("/viewContact/{id}")
 	public String showContactPage(@PathVariable Integer id, Model model) {
+		try {
 	    model.addAttribute("contact", contactService.findById(id));
 	    List<Address> listAddresses = addressService.findByContactId(id);
 	    model.addAttribute("listAddresses", listAddresses);
 		return "view_contact";
+	}
+		catch (EntityNotFoundException e) {
+			return "page_not_found";
+		}
 	}
 
     

@@ -25,7 +25,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>View Contact</th>
-            <th>Edit Address</th>
+<!--             <th>Edit Address</th> -->
             <th>Update</th>
             <th>Delete</th>
         </tr>
@@ -37,7 +37,7 @@
                 <td>[[${contact.contactFirstName}]]</td>
                 <td>[[${contact.contactLastName}]]</td>
                 <td><a th:href="@{'viewContact/' + ${contact.id}}">View Contact Info</a></td>
-                <td><a th:href="@{'address/edit' + ${contact.id}}">Edit Address</a></td>
+<!--                 <td><a th:href="@{'address/edit' + ${contact.id}}">Edit Address</a></td> -->
                 <td><a th:href="@{'/contacts/edit/' + ${contact.id}}">Update</a></td>
                 <td><a th:href="@{'/delete-contact/' + ${contact.id}}">Delete</a></td>
             </tr>
