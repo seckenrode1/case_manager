@@ -2,10 +2,12 @@ This webapp is to provide a tool for workers’ compensation law firms to keep t
  and case information. It stores client information, client addresses, where clients can have 
  more than one address, and cases, where contacts can have more than one case. 
 
-The app uses Springboot, MariaDB, Thymeaf, and Bootstrap, and Spring Security. 
+The app uses Java, Springboot, MariaDB, Thymeaf, and Bootstrap, and Spring Security. 
 Built in login information:
 Username = admin
 Password = password 
+
+Default configuration is port 3306.
 
 The search bar capabilities of the nav bar are not yet working. The unit tests are not
 done yet. There is still a lot of styling to get done. There is a schema.sql file that inserts
